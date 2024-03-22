@@ -1,7 +1,7 @@
 {
-  "name": "OSUNLaR-Admnin",
-  "productName": "OSUNLaR-Admnin",
-  "description": "OSUNLaR-Admnin",
+  "name": "OSUNLaR-Prestadores",
+  "productName": "OSUNLaR-Prestadores",
+  "description": "OSUNLaR-Prestadores",
   "keywords": [],
   "main": "./main.js",
   "version": "1.0.0",
@@ -24,8 +24,8 @@
     "electron-builder": "^24.13.3"
   },
   "build": {
-    "appId": "com.osunlar.admin",
-    "productName": "OSUNLaR-Admnin",
+    "appId": "com.osunlar.prestadores",
+    "productName": "OSUNLaR-Prestadores",
     "directories": {
       "output": "dist"
     },

@@ -10,9 +10,10 @@ Ademas exporta un instalador que funciona en todas las maquinas con windows 32 y
 MODUS OPERANDI:
 1. Instalar NODE, bajar de la web oficial e instalar. Revisar que instale NPM (en consola: npm --version).
 2. Abrir la consola (CMD O TERMINAL) e ir al directorio y ejecutar los siguientes comandos
-3. npm install
-4. npm run dist
-5. Revisar en el directorio, creo una carpeta llamada dist, dentro de ella hay un archivo que contiene la palabra setup para distribuir e instalar en entornos windows
+3. npm install electron-builder --save-dev
+4. npm install
+5. npm run dist
+6. Revisar en el directorio, creo una carpeta llamada dist, dentro de ella hay un archivo que contiene la palabra setup para distribuir e instalar en entornos windows
 
 COMO EDITAR:
 - En main.js buscar   mainWindow.loadURL('https://admin.osunlar.org'); y modificar a gusto la url

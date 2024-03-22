@@ -1,3 +1,7 @@
+// In this file you can include the rest of your app's specific main process
+// code. You can also put them in separate files and require them here.
+
+
 // Modules to control application life and create native browser window
 const { app, BrowserWindow } = require('electron')
 const path = require('node:path')
@@ -28,6 +32,10 @@ function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
+    //transparent: true, // Hacer la ventana transparente
+    //frame: false, // Quitar el marco de la ventana si lo deseas
+    //backgroundColor: '#00000000', // Establecer el color de fondo transparente
+    //devTools: false, // Desactivar las herramientas de desarrollador
     webPreferences: {
       nodeIntegration: false,
       preload: path.join(__dirname, 'preload.js')
