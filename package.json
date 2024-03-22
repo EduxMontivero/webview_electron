@@ -1,0 +1,63 @@
+{
+  "name": "OSUNLaR-Admnin",
+  "productName": "OSUNLaR-Admnin",
+  "description": "OSUNLaR-Admnin",
+  "keywords": [],
+  "main": "./main.js",
+  "version": "1.0.0",
+  "author": "eduxmontivero-osunlar",
+  "scripts": {
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\"",
+    "dist": "electron-builder --win"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "7.3.1",
+    "@electron-forge/maker-deb": "7.3.1",
+    "@electron-forge/maker-rpm": "7.3.1",
+    "@electron-forge/maker-squirrel": "7.3.1",
+    "@electron-forge/maker-zip": "7.3.1",
+    "electron": "29.1.5",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.osunlar.admin",
+    "productName": "OSUNLaR-Admnin",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "icono.ico"
+    }
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {},
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel"
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "license": "MIT"
+}
+
