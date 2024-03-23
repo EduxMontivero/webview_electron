@@ -1,11 +1,11 @@
 {
-  "name": "OSUNLaR-Prestadores",
-  "productName": "OSUNLaR-Prestadores",
-  "description": "OSUNLaR-Prestadores",
+  "name": "EduxMontivero-test1",
+  "productName": "EduxMontivero-test1",
+  "description": "EduxMontivero-test1",
   "keywords": [],
   "main": "./main.js",
   "version": "1.0.0",
-  "author": "eduxmontivero-osunlar",
+  "author": "eduxmontivero",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
@@ -24,14 +24,14 @@
     "electron-builder": "^24.13.3"
   },
   "build": {
-    "appId": "com.osunlar.prestadores",
-    "productName": "OSUNLaR-Prestadores",
+    "appId": "com.eduxmontivero.test11",
+    "productName": "EduxMontivero-test1",
     "directories": {
       "output": "dist"
     },
     "win": {
-      "target": "nsis",
-      "icon": "icono.ico"
+      "target": "nsis"
+      //,"icon": "icono.ico"
     }
   },
   "config": {

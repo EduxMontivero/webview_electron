@@ -5,15 +5,23 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
     <link href="./styles.css" rel="stylesheet">
-    <title>Hello World!</title>
+    <title>EduxMontivero</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
-
-    <!-- You can also require other files to run in this process -->
+    <center>
+    <br><br><br>
+    <h1>EduxMontivero</h1>
+    <br>
+    <a id="closeApp" href="#">Cerrar</a>
+  <br>
+    </center>
+    <script>
+    // Agrega un listener al enlace para cerrar la aplicación
+    document.getElementById('closeApp').addEventListener('click', function(e) {
+      e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+      window.api.closeApp(); // Llama a la función closeApp definida en preload.js
+    });
+  </script>
     <script src="./renderer.js"></script>
   </body>
 </html>

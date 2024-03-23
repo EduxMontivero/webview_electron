@@ -1,52 +1,31 @@
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
-
-
-// Modules to control application life and create native browser window
-const { app, BrowserWindow } = require('electron')
-const path = require('node:path')
-
-
-/*
-ESTA FUNCION EJECUTA EL HTML QUE ESTA AQUI, si se coloca esta comentar la otra funcion con el mismo nombre
-
-function createWindow () {
-  // Create the browser window.
-  const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
-    webPreferences: {
-      preload: path.join(__dirname, 'preload.js')
-    }
-  })
-
-  // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
-
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
-}
-*/
+const { app, BrowserWindow } = require('electron');
+const path = require('node:path');
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 600,
-    //transparent: true, // Hacer la ventana transparente
-    //frame: false, // Quitar el marco de la ventana si lo deseas
-    //backgroundColor: '#00000000', // Establecer el color de fondo transparente
-    //devTools: false, // Desactivar las herramientas de desarrollador
+    transparent: true, // Hacer la ventana transparente
+    frame: false, // Quitar el marco de la ventana si lo deseas
+    backgroundColor: '#00000000', // Establecer el color de fondo transparente
+    devTools: false, // Desactivar las herramientas de desarrollador
     webPreferences: {
       nodeIntegration: false,
       preload: path.join(__dirname, 'preload.js')
     },
+    // No mostrar en la barra de tareas
+    skipTaskbar: true,
     // Oculta la barra de menú
-    autoHideMenuBar: true,
-    // Maximiza la ventana al crearse
-    maximized: true
+    autoHideMenuBar: true
   });
 
-  mainWindow.loadURL('https://admin.osunlar.org');
+  //mainWindow.loadURL('https://admin.osunlar.org');
+  mainWindow.loadFile('index.html');
+  
+  // Maximizar la ventana
+  mainWindow.maximize();
+
+
 }
 
 // This method will be called when Electron has finished
@@ -68,6 +47,3 @@ app.whenReady().then(() => {
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
 })
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
