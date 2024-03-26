@@ -5,7 +5,7 @@
  * Node.js functions.
  *
  * https://www.electronjs.org/docs/latest/tutorial/sandbox
- */
+ 
 window.addEventListener('DOMContentLoaded', () => {
   const replaceText = (selector, text) => {
     const element = document.getElementById(selector)
@@ -16,3 +16,16 @@ window.addEventListener('DOMContentLoaded', () => {
     replaceText(`${type}-version`, process.versions[type])
   }
 })
+
+*/
+
+const { contextBridge, ipcRenderer } = require('electron');
+
+// Exponer la función closeApp al contexto de ventana
+contextBridge.exposeInMainWorld(
+  'api', {
+    closeApp: () => {
+      ipcRenderer.send('closeApp'); // Enviar mensaje al proceso principal para cerrar la aplicación
+    }
+  }
+);

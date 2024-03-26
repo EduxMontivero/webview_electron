@@ -1,4 +1,5 @@
-const { app, BrowserWindow } = require('electron');
+//const { app, BrowserWindow } = require('electron'); viejo
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('node:path');
 
 function createWindow() {
@@ -27,6 +28,11 @@ function createWindow() {
 
 
 }
+
+// Escuchar evento closeApp desde el proceso de renderizado
+ipcMain.on('closeApp', () => {
+  app.quit(); // Cerrar la aplicación
+});
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
