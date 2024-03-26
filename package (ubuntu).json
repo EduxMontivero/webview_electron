@@ -5,17 +5,14 @@
   "keywords": [],
   "main": "./main.js",
   "version": "1.0.0",
-  "author": {
-    "name": "eduxmontivero",
-    "email": "tu@email.com"
-  },
+  "author": "eduxmontivero",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\"",
-    "dist": "electron-builder --linux deb"
+    "dist": "electron-builder --win"
   },
   "devDependencies": {
     "@electron-forge/cli": "7.3.1",
@@ -32,8 +29,8 @@
     "directories": {
       "output": "dist"
     },
-    "linux": {
-      "target": "deb"
+    "win": {
+      "target": "nsis"
     }
   },
   "config": {

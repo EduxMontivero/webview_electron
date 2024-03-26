@@ -1,4 +1,3 @@
-//const { app, BrowserWindow } = require('electron'); viejo
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('node:path');
 
@@ -17,16 +16,15 @@ function createWindow() {
     // No mostrar en la barra de tareas
     skipTaskbar: true,
     // Oculta la barra de menú
-    autoHideMenuBar: true
+    autoHideMenuBar: true,
+    // Mantener la ventana por debajo de todas las demás ventanas
+    alwaysOnTop: false
   });
 
-  //mainWindow.loadURL('https://admin.osunlar.org');
   mainWindow.loadFile('index.html');
   
   // Maximizar la ventana
   mainWindow.maximize();
-
-
 }
 
 // Escuchar evento closeApp desde el proceso de renderizado

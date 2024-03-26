@@ -1,0 +1,1 @@
+Desactivar segundo botón y desactivar menu desarrollador. Ver como trabajar las transparencias, porque si esta en toda la pantalla no deja apretar lo que no tiene contenido en la ventana
