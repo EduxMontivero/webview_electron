@@ -1,5 +1,6 @@
 # webview_electron
-
+::::::::::::::::::::::::::: SI SE COMPILA DESDE CONSOLA USAR NODE 18.17.1 y NPM 9.8.1 :::::::::::::::::::::::::::::::::
+(desde ubuntu compilo bien para windows y linux. no probe para mac)
 
 EN POCAS PALABRAS:
 Este proyecto exporta un .exe de una URL que le pongamos en modo Webview
