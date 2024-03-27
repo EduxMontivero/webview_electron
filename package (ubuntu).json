@@ -1,18 +1,21 @@
 {
-  "name": "EduxMontivero-test1",
-  "productName": "EduxMontivero-test1",
-  "description": "EduxMontivero-test1",
+  "name": "OSUNLaR-Hola",
+  "productName": "OSUNLaR-Hola",
+  "description": "OSUNLaR-Hola",
   "keywords": [],
   "main": "./main.js",
   "version": "1.0.0",
-  "author": "eduxmontivero",
+  "author": {
+    "name": "OSUNLaR",
+    "email": "osunlar@osunlar.org"
+  },
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\"",
-    "dist": "electron-builder --win"
+    "dist": "electron-builder --linux deb"
   },
   "devDependencies": {
     "@electron-forge/cli": "7.3.1",
@@ -24,13 +27,17 @@
     "electron-builder": "^24.13.3"
   },
   "build": {
-    "appId": "com.eduxmontivero.test11",
-    "productName": "EduxMontivero-test1",
+    "appId": "com.OSUNLaR.Hola",
+    "productName": "OSUNLaR-Hola",
     "directories": {
       "output": "dist"
     },
+    "linux": {
+      "target": "deb"
+    },
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "icon": "icono.ico"
     }
   },
   "config": {

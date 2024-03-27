@@ -3,8 +3,9 @@ const path = require('node:path');
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    //se puede imponer el tamaño o mas abajo abrirlo en toda la pantalla
+//    width: 800,
+//    height: 600,
     transparent: true, // Hacer la ventana transparente
     frame: false, // Quitar el marco de la ventana si lo deseas
     backgroundColor: '#00000000', // Establecer el color de fondo transparente
@@ -18,13 +19,13 @@ function createWindow() {
     // Oculta la barra de menú
     autoHideMenuBar: true,
     // Mantener la ventana por debajo de todas las demás ventanas
-    alwaysOnTop: false
+    //alwaysOnTop: false
   });
 
   mainWindow.loadFile('index.html');
   
   // Maximizar la ventana
-  mainWindow.maximize();
+  //mainWindow.maximize();
 }
 
 // Escuchar evento closeApp desde el proceso de renderizado

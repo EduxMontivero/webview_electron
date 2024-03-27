@@ -2,26 +2,98 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+    <!-- Modificación de la CSP para permitir 'unsafe-inline' -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'">
     <link href="./styles.css" rel="stylesheet">
-    <title>EduxMontivero</title>
+    <title>OSUNLaR</title>
+    <style>
+      /* Estilos */
+      .white { color: white; }
+      .red { color: red; }
+
+      
+      #contenedor {
+        padding: 15px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, rgba(255, 165, 0, 0.8), rgba(255, 140, 0, 0.9));
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Aquí se agrega la sombra */
+        margin:10px;
+      }
+
+    </style>
   </head>
   <body>
-    <center>
-    <br><br><br>
-    <h1>EduxMontivero</h1>
-    <br>
-    <a id="closeApp" href="#">Cerrar</a>
-  <br>
-    </center>
+    <div id="contenedor">
+
+
+
+      <center>
+        <div style="width: 99%; text-align: right; font-family: arial;">
+          <a onclick="cerrarApp()" href="#" style="text-decoration: none; color: #FFEAD4;">X</a>
+        </div>
+        <img src="logo.png">
+        <br><br><br>
+        <h1 id="heading" style="font-family: arial;">¡Bienvenido!</h1>
+        <h4>Recuerde no dejar su computadora encendida al finalizar.</h4>
+        <br>
+        <button onclick="changeColor()" style="height: 35px;width: 35px;border-radius: 50%;border:none;color:white; background: #F34600; padding:5px; cursor: pointer;">Ok!</button>
+        <br><br>
+        <div id="contador" style="color:#FFEAD4;"></div>
+        <br>
+      </center>
+
+    </div>
+
     <script>
-    // Agrega un listener al enlace para cerrar la aplicación
-    document.getElementById('closeApp').addEventListener('click', function(e) {
-      e.preventDefault(); // Evita el comportamiento predeterminado del enlace
-      window.api.closeApp(); // Llama a la función closeApp definida en preload.js
-    });
-  </script>
-    <script src="./renderer.js"></script>
+      // Función para cambiar el color del texto
+      function changeColor() {
+        var heading = document.getElementById('heading');
+        if (heading.classList.contains('white')) {
+          heading.classList.remove('white');
+          heading.classList.add('red');
+        } else {
+          heading.classList.remove('red');
+          heading.classList.add('white');
+        }
+      }
+
+      
+      function  cerrarApp(){
+        window.api.closeApp(); // Llama a la función closeApp definida en preload.js
+      }
+
+      //funcion para el contador
+      function actualizarContador() {
+        // Obtener el elemento del contador
+        var contadorElement = document.getElementById("contador");
+
+        // Inicializar el contador en 5
+        var contador = 5;
+
+        // Mostrar el contador inicial
+        contadorElement.innerHTML = "Cerrar en "+contador;
+
+        // Función que se ejecutará cada segundo
+        var intervalo = setInterval(function() {
+          contador--;
+
+          // Mostrar el contador en el HTML
+          contadorElement.innerHTML = "Cerrar en "+contador;
+
+          // Si el contador llega a cero, detener el intervalo y mostrar la alerta
+          if (contador === 0) {
+            clearInterval(intervalo);
+            cerrarApp();
+          }
+        }, 1000);
+      }
+
+      // Llamar a la función para comenzar el contador
+      actualizarContador();
+      
+
+    </script>
   </body>
 </html>
+
+
